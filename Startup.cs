@@ -1,4 +1,5 @@
 using cw11.Models;
+using cw11.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,8 @@ namespace cw11
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DbContext"));
             });
+
+            services.AddScoped<IDbService, ImplementedDbService>();
 
             services.AddControllers();
         }

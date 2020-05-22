@@ -15,5 +15,10 @@ namespace cw11.Models
         public string Email { get; set; }
 
         public ICollection<Prescription> Prescriptions { get; set; }
+
+        public override string ToString()
+        {
+            return IdDoctor+" " +FirstName + " " + LastName + " " + Email;
+        }
     }
 }
